@@ -1,0 +1,63 @@
+{% extends "_base.html" %} {% block content %}
+<div
+  class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-sm border border-gray-100 mt-10"
+>
+  <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">
+    Crear Nuevo Usuario
+  </h2>
+  <form action="{{ url_for('create_user') }}" method="POST" class="space-y-4">
+    <div>
+      <label class="block text-sm font-medium text-gray-700"
+        >Nombre de Usuario</label
+      >
+      <input
+        type="text"
+        name="username"
+        required
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+      />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Email</label>
+      <input
+        type="email"
+        name="email"
+        required
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+      />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700">Contraseña</label>
+      <input
+        type="password"
+        name="password"
+        required
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+      />
+    </div>
+    <div>
+      <label class="block text-sm font-medium text-gray-700"
+        >Rol del Sistema</label
+      >
+      <select
+        name="role"
+        class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500 outline-none"
+      >
+        <option value="user">Usuario Regular</option>
+        <option value="admin">Administrador</option>
+      </select>
+    </div>
+    <button
+      type="submit"
+      class="w-full bg-green-600 text-white py-2 rounded-lg font-bold hover:bg-green-700 transition"
+    >
+      Guardar Usuario
+    </button>
+    <a
+      href="{{ url_for('dashboard') }}"
+      class="block text-center text-sm text-gray-500 hover:underline"
+      >Cancelar y volver</a
+    >
+  </form>
+</div>
+{% endblock %}

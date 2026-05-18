@@ -1,0 +1,35 @@
+{% extends "_base.html" %} {% block content %}
+<div
+  class="max-w-xl mx-auto flex flex-col items-center justify-center text-center mt-10 p-6 bg-white rounded-2xl shadow-sm border border-gray-150"
+>
+  <div class="mb-6">
+    <a
+      href="{{ url_for('toggle_role') }}"
+      class="bg-blue-100 text-blue-700 px-5 py-2.5 rounded-full text-sm font-bold border border-blue-200 hover:bg-blue-200 transition shadow-sm"
+    >
+      Modo: Usuario Regular (Click para alternar a Admin)
+    </a>
+  </div>
+
+  <h1 class="text-3xl font-extrabold text-gray-900 mb-2">¡Acceso Limitado!</h1>
+  <p class="text-gray-500 mb-6 max-w-md">
+    Como usuario con rol estándar, no tienes permisos para gestionar el CRUD...
+    pero te dejamos un meme de programación:
+  </p>
+
+  <div
+    class="w-full overflow-hidden rounded-xl shadow-md border border-gray-100 bg-gray-50 p-2"
+  >
+    <img
+      src="/static/img/meme-programcion.png"
+      alt="Meme de programación"
+      class="w-full h-auto rounded-lg block mx-auto"
+    />
+  </div>
+
+  <p class="text-xs text-gray-400 mt-4 italic">
+    Usa el botón de arriba para cambiar tu rol a 'admin' y desbloquear las
+    funciones de creación, lectura, actualización y eliminación.
+  </p>
+</div>
+{% endblock %}
